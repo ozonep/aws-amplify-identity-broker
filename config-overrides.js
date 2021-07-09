@@ -61,6 +61,10 @@ module.exports = function override(config, env) {
 			"providers": []
 		};
 			break;
+		case "dev": localConfig = {
+            "providers": ["AWSSSO"]
+		};
+			break;
 		case "prod": localConfig = {
 			"providers": ["AWSSSO", "OIDCIdentityProvider", "LoginWithAmazon", "Facebook", "Google"]
 		};
