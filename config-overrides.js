@@ -62,7 +62,7 @@ module.exports = function override(config, env) {
 		};
 			break;
 		case "dev": localConfig = {
-            "providers": ["AWSSSO"]
+            "providers": []
 		};
 			break;
 		case "prod": localConfig = {

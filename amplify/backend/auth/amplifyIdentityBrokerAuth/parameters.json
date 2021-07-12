@@ -115,10 +115,8 @@
 			]
 		}
 	],
-	"hostedUIDomainName": "diggitlogin",
-	"authProvidersUserPool": [
-		"Google"
-	],
-	"hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+	"hostedUIDomainName": "diggitlogintest",
+	"authProvidersUserPool": [],
+	"hostedUIProviderMeta": "[]",
 	"oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://injection.placeholder.amazon.com/\"],\"LogoutURLs\":[\"https://injection.placeholder.amazon.com/logout\"]}"
 }
