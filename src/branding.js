@@ -24,7 +24,7 @@ import { unstable_createMuiStrictModeTheme } from '@material-ui/core/styles';
 //import { createMuiTheme } from '@material-ui/core/styles';
 
 export const Branding = {
-	appName: "Amplify Identity Broker",
+	appName: "Diggit ID",
 
 	primary: blueGrey[900], 					// #263238,
 	secondary: blueGrey[300], 					// #90a4ae,

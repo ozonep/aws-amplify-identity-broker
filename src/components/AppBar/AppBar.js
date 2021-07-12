@@ -25,7 +25,7 @@ import Divider from '@material-ui/core/Divider';
 
 import { Branding } from '../../branding';
 import avatar from '../../assets/Avatar/avatar.png';
-import logoDark from '../../assets/Logos/logo-dark.png';
+import logoDark from '../../assets/Logos/logo-light.png';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import useWindowDimensions from '../../components/ViewPort/useWindowDimensions';
 
