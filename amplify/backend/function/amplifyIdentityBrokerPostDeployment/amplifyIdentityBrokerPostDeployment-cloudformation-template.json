@@ -172,7 +172,7 @@
             "Arn"
           ]
         },
-        "Runtime": "nodejs14.x",
+        "Runtime": "nodejs12.x",
         "Timeout": "300",
         "Code": {
           "S3Bucket": "amplify-amplify-identity-broker-nbaedev-110912-deployment",
