@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: '#1f2d3b',
 	},
 	cardMedia: {
+		paddingTop: '50px',
 		width: 150,
 		height: 150,
 		backgroundSize: 'contain',

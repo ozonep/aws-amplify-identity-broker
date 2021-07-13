@@ -26,7 +26,7 @@ import { unstable_createMuiStrictModeTheme } from '@material-ui/core/styles';
 export const Branding = {
 	appName: "Diggit ID",
 
-	primary: blueGrey[900], 					// #263238,
+	primary: '#fff', 					// #263238,
 	secondary: blueGrey[300], 					// #90a4ae,
 	accent: orange[500],						// #ff9800
 
