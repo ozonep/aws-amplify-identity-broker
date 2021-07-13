@@ -43,9 +43,11 @@ code {
 :root {
 	--amplify-font-family: "Comfortaa", -apple-system, BlinkMacSystemFont,
 		"Segoe UI", "Roboto", "Ubuntu", sans-serif;
+	--amplify-background-color: #1f2d3b;
 	--amplify-primary-color: #6fe08d;
 	--amplify-secondary-color: #fff;
 	--amplify-primary-tint: #ff9800;
+	--amplify-grey: white;
 }
 
 /*
@@ -64,13 +66,17 @@ amplify-authenticator {
 	--container-height: auto;
 }
 
-amplify-sign-in {
+/* amplify-sign-in {
 	background: #1f2d3b;
 }
 
 amplify-sign-up {
 	background: #1f2d3b;
-}
+} */
+
+/* amplify-form-section {
+	--footer-color: white;
+} */
 
 input,
 .btn {
