@@ -183,11 +183,7 @@ const SignInContainer = ({ authState, loaded }) => {
 
 	return (
 		<div>
-			<AmplifyChatbot
-				botName="Diggit Bot"
-    			botTitle="My ChatBot"
-    			welcomeMessage="Hello, how can I help you?"
-  			/>
+
 			{loaded && (
 				<Grid
 					container
@@ -333,6 +329,11 @@ const SignInContainer = ({ authState, loaded }) => {
 					</CardContent>
 				</Card >
 			</Grid>
+			<AmplifyChatbot
+				botName="DiggitDentist"
+    			botTitle="My ChatBot"
+    			welcomeMessage="Hello, how can I help you?"
+  			/>
 		</div >
 	);
 }
