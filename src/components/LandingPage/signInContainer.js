@@ -100,7 +100,7 @@ const mapStateToProps = (state) => {
 
 const SignInContainer = ({ authState, loaded }) => {
 	const classes = useStyles();
-	const [showChat, setShowChat] = React.useState(false);
+	const [showChat, setShowChat] = React.useState(true);
 
 	/*
 	 * You can make this selection of IdP different between clients
