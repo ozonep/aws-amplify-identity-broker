@@ -26,7 +26,7 @@ import { unstable_createMuiStrictModeTheme } from '@material-ui/core/styles';
 export const Branding = {
 	appName: "Diggit ID",
 
-	primary: '#fff', 					// #263238,
+	primary: '#6fe08d', 					// #263238,
 	secondary: blueGrey[300], 					// #90a4ae,
 	accent: orange[500],						// #ff9800
 
@@ -61,6 +61,7 @@ export const theme = unstable_createMuiStrictModeTheme({
 	},
 	typography: {
 		fontFamily: [
+			'Comfortaa',
 			'-apple-system',
 			'BlinkMacSystemFont',
 			'"Segoe UI"',

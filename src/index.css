@@ -66,17 +66,9 @@ amplify-authenticator {
 	--container-height: auto;
 }
 
-/* amplify-sign-in {
-	background: #1f2d3b;
+amplify-input {
+	--color: white !important;
 }
-
-amplify-sign-up {
-	background: #1f2d3b;
-} */
-
-/* amplify-form-section {
-	--footer-color: white;
-} */
 
 input,
 .btn {
