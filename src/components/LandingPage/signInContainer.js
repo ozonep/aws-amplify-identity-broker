@@ -23,7 +23,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Chip from '@material-ui/core/Chip';
 import Collapse from '@material-ui/core/Collapse';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
@@ -37,6 +36,7 @@ import RegisterConfirm from '../RegisterConfirm/RegisterConfirm';
 import DividerWithText from '../DividerWithText/DividerWithText';
 import useWindowDimensions from '../../components/ViewPort/useWindowDimensions';
 import { Branding } from '../../branding';
+import Chatbot from '../Chatbot/Chatbot';
 
 
 
@@ -89,30 +89,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 	divider: {
 		marginBottom: theme.spacing(2)
-	},
-	typoToS: {
-		paddingTop: theme.spacing(3),
-
-	},
-	linkTos: {
-		fontSize: 14,
-		'&:hover': {
-			color: Branding.accent,
-			opacity: Branding.opacityHover,
-		},
-	},
-	midBul: {
-		paddingLeft: theme.spacing(1),
-		paddingRight: theme.spacing(1),
-		color: Branding.secondary,
-	},
-	linkImprint: {
-		fontSize: 14,
-		'&:hover': {
-			cursor: 'pointer',
-			color: Branding.accent,
-			opacity: Branding.opacityHover,
-		},
 	}
 }));
 
@@ -124,6 +100,7 @@ const mapStateToProps = (state) => {
 
 const SignInContainer = ({ authState, loaded }) => {
 	const classes = useStyles();
+	const [showChat, setShowChat] = React.useState(false);
 
 	/*
 	 * You can make this selection of IdP different between clients
@@ -337,11 +314,14 @@ const SignInContainer = ({ authState, loaded }) => {
 					</CardContent>
 				</Card >
 			</Grid>
-			<AmplifyChatbot
+			<Chatbot showChat={setShowChat}/>
+			{showChat && (
+				<AmplifyChatbot
 				botName="DiggitDentist"
-    			botTitle="My ChatBot"
+    			botTitle="Diggit ChatBot"
     			welcomeMessage="Hello, how can I help you?"
-  			/>
+  				/>
+			)}
 		</div >
 	);
 }

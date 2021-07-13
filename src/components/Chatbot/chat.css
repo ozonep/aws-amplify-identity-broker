@@ -1,0 +1,31 @@
+#livechat-compact-container {
+	visibility: visible;
+	opacity: 1;
+	height: 153px;
+	position: fixed;
+	right: 0;
+	top: 30vh;
+	z-index: 10000;
+}
+.btn-chat a {
+	font-family: "Comfortaa";
+	color: #fff;
+	text-decoration: none;
+	background: #6fe08d;
+	padding: 24px 20px 8px;
+	display: block;
+	font-weight: bold;
+	font-size: 14px;
+	box-shadow: 0 0 0 1px black inset;
+	border: 1px solid #6fe08d;
+	border-radius: 2px;
+	transform: rotate(90deg) translate(0, -20px);
+	position: relative;
+	right: -27px;
+	transition: background 0.2s, right 0.2s;
+}
+.btn-chat a:hover {
+	background: #a6fabd;
+	right: -20px;
+	transition: background 0.2s, right 0.2s;
+}
