@@ -11,7 +11,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { Auth } from 'aws-amplify';
-import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import { AmplifyAuthenticator, AmplifySignOut, AmplifyChatbot } from '@aws-amplify/ui-react';
 import { AuthState } from '@aws-amplify/ui-components';
 import { I18n } from '@aws-amplify/core';
 
@@ -183,7 +183,11 @@ const SignInContainer = ({ authState, loaded }) => {
 
 	return (
 		<div>
-
+			<AmplifyChatbot
+				botName="Diggit Bot"
+    			botTitle="My ChatBot"
+    			welcomeMessage="Hello, how can I help you?"
+  			/>
 			{loaded && (
 				<Grid
 					container
@@ -326,30 +330,6 @@ const SignInContainer = ({ authState, loaded }) => {
 							</div>
 						</AmplifyAuthenticator>
 
-						{loaded && (
-							<Typography className={classes.typoToS}>
-								<Link
-									href="/tos"
-									target="_blank"
-									color="secondary"
-									underline="none"
-									className={classes.linkTos}
-								>
-									{I18n.get("TERMS_OF_SERVICE_CONTENT_TITLE")}
-								</Link>
-
-								<span className={classes.midBul}>&bull;</span>
-
-								<Link
-									//href="#"
-									color="secondary"
-									underline="none"
-									className={classes.linkImprint}
-								>
-									{I18n.get("IMPRINT_TITLE")}
-								</Link>
-							</Typography>
-						)}
 					</CardContent>
 				</Card >
 			</Grid>
