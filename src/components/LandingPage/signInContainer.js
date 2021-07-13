@@ -34,7 +34,6 @@ import Login from '../Login/Login';
 import Register from '../Register/Register';
 import ForgotPassword from '../ForgotPassword/ForgotPassword';
 import RegisterConfirm from '../RegisterConfirm/RegisterConfirm';
-import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import DividerWithText from '../DividerWithText/DividerWithText';
 import useWindowDimensions from '../../components/ViewPort/useWindowDimensions';
 import { Branding } from '../../branding';
@@ -58,8 +57,8 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'center',
 	},
 	cardMedia: {
-		width: 300,
-		height: 200,
+		width: 150,
+		height: 150,
 		backgroundSize: 'contain',
 	},
 	cardHeader: {
@@ -182,9 +181,6 @@ const SignInContainer = ({ authState, loaded }) => {
 
 	return (
 		<div>
-			{loaded && (
-				<LanguageSelect />
-			)}
 
 			{loaded && (
 				<Grid

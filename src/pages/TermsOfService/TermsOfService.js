@@ -19,7 +19,6 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import { theme } from '../../branding';
 
 import TosContent from './content';
-import LanguageSelect from '../../components/LanguageSelect/LanguageSelect';
 import AppSnackbar from '../../components/Snackbar/Snackbar';
 
 import { setLang, setAuth, setUser } from '../../redux/actions';
@@ -185,7 +184,6 @@ class TermsOfService extends Component {
 	render() {
 		return (
 			<MuiThemeProvider theme={theme}>
-				<LanguageSelect />
 
 				<TosContent reSign={this.state.tosResign} tosAccept={this.handleTosAccepted} tosDecline={this.handleTosDecline} />
 

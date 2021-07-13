@@ -15,28 +15,7 @@
             SMS_MESSAGE: "Click on this link to verify your contact info: ",
             EMAIL_SUBJECT: "Action Required: Verify your contact info.",
             EMAIL_LINK: "Click here"
-        },
-        fr: {
-            EMAIL_GREETING: "Bonjour",
-            EMAIL_MESSAGE: "d'avoir créé un compte avec nous. Veuillez cliquer sur le lien ci-dessous pour confirmer l'inscription!",
-            SMS_MESSAGE: "Cliquez sur ce lien pour vérifier vos coordonnées: ",
-            EMAIL_SUBJECT: "Action Requise: Vérifiez vos coordonnées",
-            EMAIL_LINK: "Cliquez ici"
-        },
-        de: {
-            EMAIL_GREETING: "Hallo",
-            EMAIL_MESSAGE: "Vielen Dank, dass Sie ein Account bei uns erstellt haben. Bitte klicken Sie auf den unten stehenden Link, um die Registrierung zu bestätigen.",
-            SMS_MESSAGE: "Klicken Sie auf den folgenden Link, um Ihre Angaben zu überprüfen: ",
-            EMAIL_SUBJECT: "Erforderliche Aktion: Überprüfen Sie Ihre Kontaktinformationen.",
-            EMAIL_LINK: "Hier klicken"
-        },
-        nl: {
-            EMAIL_GREETING: "Hallo",
-            EMAIL_MESSAGE: "dBedankt voor het aanmaken van een account bij ons. Klik op de onderstaande link om de registratie te bevestigen.",
-            SMS_MESSAGE: "Klik op deze link om uw contactgegevens te verifiëren: ",
-            EMAIL_SUBJECT: "Actie vereist: Verifieer uw contactgegevens.",
-            EMAIL_LINK: "Klik hier"
-        },
+        }
     };
     this.language = "en" // default language
 }
@@ -44,9 +23,6 @@
 I18N.prototype.setLanguage = function(language){
     // If language not known in list we set English
     switch(language){
-        case "fr":
-        case "de":
-        case "nl":
         case "en":
             this.language = language;
             break;
@@ -60,7 +36,7 @@ I18N.prototype.get = function(key){
     let languageDict = this.strings[this.language];
     return languageDict[key];
 }
-    
+
 exports.handler = (event, context, callback) => {
 
     // Template used to generate HTML email
@@ -73,9 +49,9 @@ exports.handler = (event, context, callback) => {
              margin: 0;
              font: 12px/16px Arial, sans-serif;
          }
- 
+
          /* buttons */
- 
+
          .buttonComponent {
              border-collapse: separate;
              text-decoration: none !important;
@@ -90,7 +66,7 @@ exports.handler = (event, context, callback) => {
              min-width: 150px;
              min-height: 27px;
          }
- 
+
          .buttonComponentLink {
              color: rgb(27, 27, 27) !important;
              font: 16px/ 18px Arial, sans-serif !important;
@@ -102,7 +78,7 @@ exports.handler = (event, context, callback) => {
          }
      </style>
  </head>
- 
+
  <body>
     <div class="greeting">
         ${translator.get("EMAIL_GREETING")} ${email},
@@ -112,7 +88,7 @@ exports.handler = (event, context, callback) => {
         <br />
         <br />
     </div>
-    
+
      <table id="container" class="buttonComponent" bgcolor="#ffa723" width="222">
          <tbody>
              <tr>
@@ -122,9 +98,9 @@ exports.handler = (event, context, callback) => {
              </tr>
          </tbody>
      </table>
- 
+
  </body>
- 
+
  </html>`
 
     const url = process.env.HOSTING_DOMAIN + "/accountConfirmation";
@@ -140,7 +116,7 @@ exports.handler = (event, context, callback) => {
     if (event.triggerSource === "CustomMessage_SignUp") {
         let lang = event.request.userAttributes["locale"]; // Access the event data of custom user Attribute lang
         translator.setLanguage(lang);
-        
+
         event.response.smsMessage   = translator.get("SMS_MESSAGE") + " " + link;
         event.response.emailSubject = translator.get("EMAIL_SUBJECT");
         event.response.emailMessage = template(email, link);
