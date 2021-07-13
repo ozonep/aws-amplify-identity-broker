@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	card: {
 		justifyContent: 'center',
+		backgroundColor: '#1f2d3b',
 	},
 	cardMedia: {
 		width: 150,
