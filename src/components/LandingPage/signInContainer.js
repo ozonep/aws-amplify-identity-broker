@@ -10,7 +10,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Auth } from 'aws-amplify';
+import { Auth, Interactions } from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignOut, AmplifyChatbot } from '@aws-amplify/ui-react';
 import { AuthState } from '@aws-amplify/ui-components';
 import { I18n } from '@aws-amplify/core';
@@ -157,6 +157,14 @@ const SignInContainer = ({ authState, loaded }) => {
 	const allwaysExpanded = (countIdpLogins < 1) || ((countIdpLogins + countSamlLogins) <= 3)
 	const [expandIdp, setExpandIdp] = React.useState(allwaysExpanded || false);
 	const { width } = useWindowDimensions();
+	Interactions.configure({
+		bots: {
+      		"DiggitDentist": {
+        		"name": "DiggitDentist",
+        		"alias": "TestBotAlias",
+        		"region": "eu-west-2",
+      },
+    }})
 
 	const handleIdPLogin = (identity_provider) => {
 		// Store redirect_uri/authorization_code in local storage to be used to later
